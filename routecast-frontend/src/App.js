@@ -8,6 +8,10 @@ import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import SignUp from "./components/SignUp";
 import SignIn from "./components/SignIn";
+import LocationForm from "./components/LocationForm";
+// import Weather from "./components/Weather";
+import "./components/Location.css";
+// import "./components/WeatherInfo.css";
 
 function App() {
   const [message, setMessage] = useState("");
@@ -42,20 +46,25 @@ function App() {
 
   return (
     <Router>
-      <Navbar /> {/* Navbar outside Routes */}
+      <Navbar />
+      {/* <Weather /> */}
+      <Routes>
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/location" element={<LocationForm />} />
+      </Routes>
+      {/* <LocationForm /> */}
       <header className="hero">
         <div className="hero-overlay animate__animated animate__fadeIn">
           <h1 className="hero-title">RouteCast</h1>
           <p className="hero-subtitle">
             Real-time weather updates for smarter travel planning.
           </p>
-          <button className="btn btn-light hero-button">Get Started</button>
+          <button className="btn btn-light hero-button">
+            <a href="/location">Get Started</a>
+          </button>
         </div>
       </header>
-      <Routes>
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/signin" element={<SignIn />} />
-      </Routes>
       <main className="container features mt-5">
         <h2 className="section-title">Features</h2>
         <div className="row mt-4">
@@ -162,7 +171,7 @@ export default App;
 //         {/* Features Section */}
 //         <main className="container features mt-5">
 //           <h2 className="section-title">Features</h2>
-//           <div className="row mt-4">
+//           <div className="row mt-4">t
 //             <div className="col-md-4 feature-card animate__animated animate__zoomIn">
 //               <i className="fas fa-cloud-sun feature-icon"></i>
 //               <h3>Real-Time Weather</h3>

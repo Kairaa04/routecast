@@ -17,11 +17,6 @@ function Navbar() {
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <a className="nav-link" href="/features">
-                Sign Up / Sign In
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/features">
                 Features
               </a>
             </li>
